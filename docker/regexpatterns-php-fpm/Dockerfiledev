@@ -1,0 +1,15 @@
+FROM phpdockerio/php71-fpm:latest
+
+# Install selected extensions and other stuff
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && apt-get -y --no-install-recommends install  php-memcached php7.1-mysql php7.1-gd php7.1-pspell php-xdebug \
+    && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/* ;
+
+
+ENV XDEBUGINI_PATH=/etc/php/7.1/fpm/conf.d/20-xdebug.ini
+
+
+
+WORKDIR "/var/www/regexpatterns"
+
