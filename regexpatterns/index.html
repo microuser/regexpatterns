@@ -46,8 +46,8 @@
                         Download</a>
                 </li>
                 <li class="">
-                    <a href="#Getting Started">
-                        Getting Started</a>
+                    <a href="#WorkshopLessons">
+                        Workshop Lessons</a>
                 </li>
                 
                 
@@ -129,10 +129,11 @@
             
             
             <!-- features -->
+            <a id="WorkshopLessons"/>
             <section id="features" class="doc-center-wrapper doc-home-feature">
                 <div class="container doc-center-container">
                     <h2>
-                        What will you learn</h2>
+                        Workshop Lessons: What to learn</h2>
                     <div class="doc-hr">
                     </div>
                     <div class="row">
@@ -211,8 +212,8 @@
                         </div>
                     </div>
                     <p>
-                        <a href="/examples/" class="btn">
-                            Examples</a>
+                        <!--<a href="/examples/" class="btn">
+                            Examples</a>-->
                     </p>
                 </div>
             </section>
@@ -221,7 +222,8 @@
             
             
             
-            <!-- download -->
+            <!-- section -->
+            <!--
             <section id="download" class="doc-center-wrapper doc-home-download">
                 <div class="container doc-center-container">
                     <h2>
@@ -236,114 +238,18 @@
                     </p>
                 </div>
             </section>
+            -->
+            
+            
             
             <!--  Input 1-->
-            <section> <h3 id="input-group">Input group<a class="toc-anchor" href="#input-group" style="display: none;">#</a></h3> <div class="doc-demo"> <ul class="nav nav-tabs"> <li role="presentation" class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="doc-framework">Bootstrap 3</span> <i class="caret"></i></a> <ul class="dropdown-menu" role="menu"> <li class="active"><a href="/examples/adjusting-feedback-icon-position/input-group/bootstrap.html" data-demo-target="#input-group-frame" data-demo-framework="bootstrap">Bootstrap 3</a></li> </ul> </li> <li class="active"><a href="#input-group-form-tab" data-toggle="tab">Try it</a></li> <li><a href="#input-group-programmatic-tab" data-toggle="tab">Programmatic code</a></li> <li class="doc-demo-direct"><a href="/examples/adjusting-feedback-icon-position/input-group/bootstrap.html" data-toggle="tooltip" data-container="body" title="" target="_blank" data-original-title="Open the demo in new tab"><i class="fa fa-external-link"></i></a></li> </ul> <div class="tab-content"> <div class="tab-pane active" id="input-group-form-tab"> <div class="doc-demo-loader" style="display: none;"><i class="fa fa-refresh fa-spin fa-2x"></i></div>
-                            <iframe class="doc-demo-frame" id="input-group-frame" style="visibility: visible; display: inline; height: 258px;" src="example1.html"></iframe> </div> <div class="tab-pane" id="input-group-programmatic-tab"> <div data-demo-code="bootstrap" style="display: block;"> <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-<span class="nf">#productForm</span> <span class="nc">.inputGroupContainer</span> <span class="nc">.form-control-feedback</span><span class="o">,</span>
-<span class="nf">#productForm</span> <span class="nc">.selectContainer</span> <span class="nc">.form-control-feedback</span> <span class="p">{</span>
-    <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="k">right</span><span class="o">:</span> <span class="m">-15px</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span>
-
-<span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"productForm"</span> <span class="na">class=</span><span class="s">"form-horizontal"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-xs-3 control-label"</span><span class="nt">&gt;</span>Price<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-3 inputGroupContainer"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"price"</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-addon"</span><span class="nt">&gt;</span>$<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-xs-3 control-label"</span><span class="nt">&gt;</span>Amount<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-3 inputGroupContainer"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"input-group"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"input-group-addon"</span><span class="nt">&gt;</span><span class="ni">&amp;#8364;</span><span class="nt">&lt;/span&gt;</span>
-                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"amount"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-xs-3 control-label"</span><span class="nt">&gt;</span>Color<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-3 selectContainer"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"color"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Choose a color<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"blue"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"green"</span><span class="nt">&gt;</span>Green<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"red"</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"yellow"</span><span class="nt">&gt;</span>Yellow<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"white"</span><span class="nt">&gt;</span>White<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;/select&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-xs-3 control-label"</span><span class="nt">&gt;</span>Size<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-xs-3 selectContainer"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"size"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Choose a size<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"S"</span><span class="nt">&gt;</span>S<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"M"</span><span class="nt">&gt;</span>M<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"L"</span><span class="nt">&gt;</span>L<span class="nt">&lt;/option&gt;</span>
-                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"XL"</span><span class="nt">&gt;</span>XL<span class="nt">&lt;/option&gt;</span>
-            <span class="nt">&lt;/select&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-
-<span class="nt">&lt;script&gt;</span>
-<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#productForm'</span><span class="p">).</span><span class="nx">formValidation</span><span class="p">({</span>
-        <span class="nx">framework</span><span class="o">:</span> <span class="s1">'bootstrap'</span><span class="p">,</span>
-        <span class="nx">icon</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">valid</span><span class="o">:</span> <span class="s1">'glyphicon glyphicon-ok'</span><span class="p">,</span>
-            <span class="nx">invalid</span><span class="o">:</span> <span class="s1">'glyphicon glyphicon-remove'</span><span class="p">,</span>
-            <span class="nx">validating</span><span class="o">:</span> <span class="s1">'glyphicon glyphicon-refresh'</span>
-        <span class="p">},</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">price</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The price is required'</span>
-                    <span class="p">},</span>
-                    <span class="nx">numeric</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The price must be a number'</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nx">amount</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The amount is required'</span>
-                    <span class="p">},</span>
-                    <span class="nx">numeric</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The amount must be a number'</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nx">color</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The color is required'</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">},</span>
-            <span class="nx">size</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">validators</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">notEmpty</span><span class="o">:</span> <span class="p">{</span>
-                        <span class="nx">message</span><span class="o">:</span> <span class="s1">'The size is required'</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></figure> </div> </div> </div> </div> 
+            <section> 
+                <h3 id="input-group">Input group
+                    <a class="toc-anchor" href="#input-group" style="display: none;">#</a>
+                </h3> <div class="doc-demo"> 
+                    <iframe class="doc-demo-frame" id="input-group-frame" style="visibility: visible; display: inline; height:900px;" src="example2.html"></iframe> 
+                        
+                </div> 
             </section>
             
         </div>
@@ -355,7 +261,7 @@
                     $(this).find('i').toggleClass('fa-navicon fa-close');
                     $('body').toggleClass('doc-nav-shown');
                 });
-                $('#main').onepage_scroll({animationTime: 1000, responsiveFallback: 767});
+                $('#main').onepage_scroll({animationTime: 100, responsiveFallback: 767});
             });</script>
     </body>
 </html>

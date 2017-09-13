@@ -76,15 +76,7 @@
     'native': function ($el) {
       var el = $el[0]
       if (el.checkValidity) {
-          var $oppProp = $el.attr('opposite');
-          if($oppProp !== undefined){
-              var $ret = el.checkValidity() && el.validity.valid && (el.validationMessage || "error!");
-            return $ret;
-          } else {
-              var $ret = !el.checkValidity() && !el.validity.valid && (el.validationMessage || "error!")  
-            return $ret;
-          }
-        
+        return !el.checkValidity() && !el.validity.valid && (el.validationMessage || "error!")
       }
     },
     'match': function ($el) {
@@ -169,7 +161,7 @@
     }
 
     function getValidityStateError() {
-      var validity = $el[0].validity;
+      var validity = $el[0].validity
       return validity.typeMismatch    ? $el.attr('data-type-error')
            : validity.patternMismatch ? $el.attr('data-pattern-error')
            : validity.stepMismatch    ? $el.attr('data-step-error')
