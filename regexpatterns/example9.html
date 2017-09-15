@@ -28,10 +28,10 @@
                     <!-- Dropdowns ================================================== -->
                     <div class="bs-docs-section">
                         <div class="page-header">
-                            <h1 id="validator">Sometimes a comma<small></small></h1>
+                            <h1 id="validator">Ends with comma separated zeros<small></small></h1>
                         </div>
                         <ul>
-                            <li>a pattern can pass if it matches or not with the ?</li>
+                            <li>A pattern can such as (,000) can be specified to repeat many times, or not repeat at all with an asterisk</li>
                         </ul>
                         <div>
                             <form data-toggle="validator" role="form" id="form">
@@ -66,7 +66,7 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
                                                 <input type="text" pattern="" class="form-control"  required
-                                                    value="1000">
+                                                    value="1">
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
@@ -84,6 +84,18 @@
                                         </div>
 
 
+                                        <div class="form-group has-feedback" >
+                                            <label for="inputTwitter" class="control-label">Match</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"></span>
+                                                <input type="text" pattern="" class="form-control"  required
+                                                    value="1,000,000,000">
+                                            </div>
+                                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                            <div class="help-block"></div>
+                                        </div>
+
+
                                     </div>                                     
 
                                     <!-- NOT MATCH -->
@@ -94,7 +106,19 @@
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
                                                 <input type="text" pattern="" class="form-control" opposite 
-                                                value="," >
+                                                value="1,00" >
+                                            </div>
+                                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                            <div class="help-block"></div>
+                                        </div>
+
+
+                                        <div class="form-group has-feedback" >
+                                            <label for="inputTwitter" class="control-label">Don't Match</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"></span>
+                                                <input type="text" pattern="" class="form-control" opposite 
+                                                value="1000000," >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
