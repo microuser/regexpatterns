@@ -140,6 +140,7 @@ A comma separated odd number, zero padded
 001
  
 0001
+
  
  
  
@@ -159,26 +160,14 @@ ape
  
  
  
-15##########################
-AnchOR Management
-Is only one string or another
- 
-(solution): ^cat$|^dog$
- 
-cat
-dog
- 
-tacocat
+
  
  
  
  
  
  
- 
- 
- 
-16#########################
+15#########################
 Pattern Captures and non captures
 Pattern captures occur with each set of parenthesis
 if you don't want parenthesis to capture then start the parenthesis like (?:yourpattern)
@@ -189,7 +178,7 @@ CCcaptureDD
 (?:.+)(capture)(?:.+)
  
  
-17#########################
+16#########################
 Repeated Captures like variables
 you can reference the first capture using \1
 you can reference the second capture using \2
@@ -205,7 +194,7 @@ cddc
 aaaa
 abbb
  
-18###############################
+17###############################
 1st is 1st and 0th is 0th
 (1st|2nd|3rd|[4567890]th) is \1
  
@@ -225,21 +214,21 @@ abbb
 4th is 5th
  
  
-19####################################
+18####################################
 First word and second word capture
  
 ([^ ]) ([^ ])
  
-20###############################
+19###############################
 First Last or Last, First
  
  ([^ ]) ([^ ])|([^ ]), ([^ ])
  
- 21#################################
+ 20#################################
 extract numbers in array
  ([0-9])
  
- 22#################################
+ 21#################################
 Extract Name Prefix
  (.+\.) .+
  Mr. Smith

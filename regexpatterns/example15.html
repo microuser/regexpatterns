@@ -28,10 +28,10 @@
                     <!-- Dropdowns ================================================== -->
                     <div class="bs-docs-section">
                         <div class="page-header">
-                            <h1 id="validator">A capture repeats<small></small></h1>
+                            <h1 id="validator">Pattern Captures and non captures<small></small></h1>
                         </div>
                         <ul>
-                            <li>Use square brackets to list characters and ranges, keeping in mind optional matches and one or more matches</li>
+                            <li>Pattern captures occur with each set of parenthesis if you don't want parenthesis to capture then start the parenthesis like (?:yourpattern)</li>
                         </ul>
                         <div>
                             <form data-toggle="validator" role="form" id="form">
@@ -65,8 +65,8 @@
                                             <label for="inputTwitter" class="control-label">Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control"  required
-                                                    value="111">
+                                                <input id="one" type="text" pattern="" class="form-control"  required
+                                                    value="capture">
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
@@ -76,8 +76,8 @@
                                             <label for="inputTwitter" class="control-label">Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control"  required
-                                                    value="20333">
+                                                <input id="two" type="text" pattern="" class="form-control"  required
+                                                    value="AcaptureA">
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
@@ -88,8 +88,8 @@
                                             <label for="inputTwitter" class="control-label">Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control"  required
-                                                    value="22947367">
+                                                <input id="three" type="text" pattern="" class="form-control"  required
+                                                    value="CCcaptureCC">
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
@@ -102,11 +102,11 @@
                                     <div class="col-sm-6">
 
                                         <div class="form-group has-feedback" >
-                                            <label for="inputTwitter" class="control-label">Don't Match</label>
+                                            <label for="inputTwitter" class="control-label">Capture</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" opposite 
-                                                value="24689" >
+                                                <input id="onematches" type="text" pattern="capture" class="form-control" opposite 
+                                                value="" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
@@ -114,11 +114,11 @@
 
 
                                         <div class="form-group has-feedback" >
-                                            <label for="inputTwitter" class="control-label">Don't Match</label>
+                                            <label for="inputTwitter" class="control-label">Capture</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" opposite 
-                                                value="22-3" >
+                                                <input id="twomatches" type="text" pattern="capture" class="form-control" opposite 
+                                                value="" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
@@ -127,11 +127,11 @@
 
 
                                         <div class="form-group has-feedback" >
-                                            <label for="inputTwitter" class="control-label">Don't Match</label>
+                                            <label for="inputTwitter" class="control-label">Capture</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" opposite 
-                                                value="--3223" >
+                                                <input id="threematches" type="text" pattern="capture" class="form-control" opposite 
+                                                value="" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
@@ -190,7 +190,17 @@
                 $regexValue = this.value;
                 $('#form').find('input').each(function () {
                     if ($(this).prop('required')) {
-                        if (this.id !== "regex") {
+                        if (this.id !== "regex"  ) {
+
+                            if( !this.id.endsWith("matches")){
+                                $(this).attr('pattern', $regexValue);
+                                $regex = new RegExp($("#regex")[0].value,"g");
+                                
+                                console.log(this.value.match($regex)[0]);
+                                $("#twomatches").value = "set";
+                                $("#"+this.id+"matches").value = this.value.match($regex)[0];
+
+                            }
                             //if(this.id.startsWith('not')){
                             //    $(this).attr('pattern', "(?!("+$regexValue+"))");
                             //} else {
