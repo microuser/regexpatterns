@@ -28,9 +28,11 @@
                     <!-- Dropdowns ================================================== -->
                     <div class="bs-docs-section">
                         <div class="page-header">
-                            <h1 id="validator">Match More Than One Character <small></small></h1>
+                            <h1 id="validator">1st is 1st and 0th is 0th<small></small></h1>
                         </div>
-                        <p>A period &quote;.&quote; represents any typable character. <br/>To start. Click in the regex input field below, and type a period.<br/> you will notice that the regex you enter will be applied to the validation to the collection of other input fields.<br/> To foce a match of one or more. Use a plus sign after a pattern. Note: a period is a single character pattern. Other patterns can be in parenthesis or oin square bracks. </p>
+                        <ul>
+                            <li>you can reference the first capture using \1</li><li>multiple conditions can be captured in the or.</li>
+                        </ul>
                         <div>
                             <form data-toggle="validator" role="form" id="form">
 
@@ -51,6 +53,10 @@
 
                                     </div>
                                 </div>
+
+
+
+                                <!-- MATCH -->
                                 <div class="row">
 
                                     <div class="col-sm-6">
@@ -59,76 +65,79 @@
                                             <label for="inputTwitter" class="control-label">Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" value="aaksjdfa sdf" required>
+                                                <input type="text" pattern="" class="form-control"  required
+                                                    value="1st is 1st">
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
                                         </div>
-
-                                     
 
                                         <div class="form-group has-feedback" >
                                             <label for="inputTwitter" class="control-label">Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" value="asdlfjasldkjf 4323423" required>
+                                                <input type="text" pattern="" class="form-control"  required
+                                                    value="3rd ohh my 3rd">
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
                                         </div>
-
-                                     
 
 
                                         <div class="form-group has-feedback" >
                                             <label for="inputTwitter" class="control-label">Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" value="vj48dvjdj" required>
+                                                <input type="text" pattern="" class="form-control"  required
+                                                    value="6th is best 6th">
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
                                         </div>
-                                    </div>
 
 
+                                    </div>                                     
 
+                                    <!-- NOT MATCH -->
                                     <div class="col-sm-6">
 
                                         <div class="form-group has-feedback" >
                                             <label for="inputTwitter" class="control-label">Don't Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" opposite value="d" required>
+                                                <input type="text" pattern="" class="form-control" opposite 
+                                                value="1nd is 1nd" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
                                         </div>
-
-                                     
-
-                                        <div class="form-group has-feedback" >
-                                            <label for="inputTwitter" class="control-label">Don't Match</label>
-                                            <div class="input-group">
-                                                <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" opposite value="%" required>
-                                            </div>
-                                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                                            <div class="help-block"></div>
-                                        </div>
-
-                                     
 
 
                                         <div class="form-group has-feedback" >
                                             <label for="inputTwitter" class="control-label">Don't Match</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input type="text" pattern="" class="form-control" opposite value="0" required>
+                                                <input type="text" pattern="" class="form-control" opposite 
+                                                value="7st is 7st" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                             <div class="help-block"></div>
                                         </div>
+
+
+
+                                        <div class="form-group has-feedback" >
+                                            <label for="inputTwitter" class="control-label">Don't Match</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"></span>
+                                                <input type="text" pattern="" class="form-control" opposite 
+                                                value="abcd" >
+                                            </div>
+                                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                            <div class="help-block"></div>
+                                        </div>
+
+
                                     </div>
                                 </div>        
                                 <button type="submit" class="btn btn-primary" id="submit">
@@ -182,12 +191,7 @@
                 $('#form').find('input').each(function () {
                     if ($(this).prop('required')) {
                         if (this.id !== "regex") {
-                            //if(this.id.startsWith('not')){
-                            //    $(this).attr('pattern', "(?!("+$regexValue+"))");
-                            //} else {
-                                $(this).attr('pattern', $regexValue);
-                            //}
-                            
+                            $(this).attr('pattern', $regexValue);
                             $('#form').validator('update');
                             $('#form').validator('validate');
                         }                       

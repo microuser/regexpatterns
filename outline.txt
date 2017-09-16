@@ -195,11 +195,11 @@ abcabc
  
 17###############################
 1st is 1st and 0th is 0th
-(1st|2nd|3rd|[4567890]th) is \1
+(1st|2nd|3rd|[4567890]th).*\1
  
 1st is 1st
 2nd is 2nd
-3rd is 3rd
+3rd ohh my 3rd
 4th is 4th
 5th is 5th
 6th is 6th
