@@ -105,7 +105,7 @@
                                             <label for="inputTwitter" class="control-label">Capture</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input id="onematches" type="text" pattern="capture" class="form-control" opposite 
+                                                <input id="onematches" type="text" pattern="capture" class="form-control"  
                                                 value="" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -117,7 +117,7 @@
                                             <label for="inputTwitter" class="control-label">Capture</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input id="twomatches" type="text" pattern="capture" class="form-control" opposite 
+                                                <input id="twomatches" type="text" pattern="capture" class="form-control"  
                                                 value="" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -130,7 +130,7 @@
                                             <label for="inputTwitter" class="control-label">Capture</label>
                                             <div class="input-group">
                                                 <span class="input-group-addon"></span>
-                                                <input id="threematches" type="text" pattern="capture" class="form-control" opposite 
+                                                <input id="threematches" type="text" pattern="capture" class="form-control"  
                                                 value="" >
                                             </div>
                                             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -191,22 +191,52 @@
                 $('#form').find('input').each(function () {
                     if ($(this).prop('required')) {
                         if (this.id !== "regex"  ) {
+                            $regex = undefined;
+                            try{
+                                $regex = new RegExp($("#regex")[0].value,"g");
+                                $regexIsValid = true;
+                            } catch(e){
+                                $regexIsValid = false;
+                            }   
 
                             if( !this.id.endsWith("matches")){
-                                $(this).attr('pattern', $regexValue);
-                                $regex = new RegExp($("#regex")[0].value,"g");
-                                
-                                console.log(this.value.match($regex)[0]);
-                                $("#twomatches").value = "set";
-                                $("#"+this.id+"matches").value = this.value.match($regex)[0];
-
-                            }
-                            //if(this.id.startsWith('not')){
-                            //    $(this).attr('pattern', "(?!("+$regexValue+"))");
-                            //} else {
-                                $(this).attr('pattern', $regexValue);
-                            //}
+                                try{
+                                    if(typeof $regex !== typeof undefined ){
+                                        console.log($regex);
+                                        console.log("assigning " + this.id + " a pattern of " + $regexValue);
+                                        $(this).attr('pattern', $regexValue);
+                                        
+                                        try{
+                                            //console.log("matches");
+                                            $matches = $regex.exec(this.value);
+                                            //console.log("this value" + this.value);
+                                            //console.log($matches[0]);
+                                            //console.log($matches[1]);
+                                            $firstMatch = $matches[1];
+                                            //$firstMatch = this.value.match($regex)[0];
+                                        } catch(e){
+                                            $firstMatch = ""
+                                        }
+                                        
+                                        console.log("First capture of " + $regex +" is " + $firstMatch);
+                                        $("#"+this.id+"matches").val($firstMatch);
+                                    } else {
+                                        console.log("Regex is incomplete");
+                                        $("#"+this.id+"matches").val("");
+                                    }   
+                                } catch(e){
+                                    console.log("Unable to set value of "+this.id);
+                                }
                             
+                                
+                            }
+                            
+                            if($regexIsValid){
+                                $(this).attr('pattern', $regexValue);
+                                $(this).attr('pattern', "[^.]*");   
+                            }
+                            
+
                             $('#form').validator('update');
                             $('#form').validator('validate');
                         }                       
