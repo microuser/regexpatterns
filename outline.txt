@@ -169,8 +169,7 @@ ape
  
 15#########################
 Pattern Captures and non captures
-Pattern captures occur with each set of parenthesis
-if you don't want parenthesis to capture then start the parenthesis like (?:yourpattern)
+	
 capture
 AcaptureB
 CCcaptureDD
@@ -187,12 +186,12 @@ you can reference the second capture using \2
 (.+)(.+)\2\1
  
 abba
-abbaba
-cddc
-1001
- 
+abccab
 aaaa
-abbb
+
+ 
+abab
+abcabc
  
 17###############################
 1st is 1st and 0th is 0th
